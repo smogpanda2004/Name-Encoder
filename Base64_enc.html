@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Encoder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://imageio.forbes.com/specials-images/imageserve/5dce3afbea103f0006527443/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white; /* Text color */
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 600px;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Base64 Encoder</h1>
+        <p>Enter text to encode in Base64 format:</p>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <button onclick="encodeBase64()">Encode</button>
+        <h3>Encoded Output:</h3>
+        <textarea id="outputText" class="output" readonly></textarea>
+    </div>
+
+    <script>
+        function encodeBase64() {
+            const inputText = document.getElementById('inputText').value;
+            const encodedText = btoa(inputText);  // Encoding to Base64
+            document.getElementById('outputText').value = encodedText;
+        }
+    </script>
+</body>
+</html>
